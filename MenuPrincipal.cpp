@@ -14,6 +14,11 @@
 #include "Decimal_hexadecimal.cpp"
 #include "Hipotenusa.cpp"
 #include "Numero_central.cpp"
+#include "EnterosaLetras.cpp"
+#include "GenerarPassword.cpp"
+#include "MoverPunto.cpp"
+#include "MultiGrafica.cpp"
+#include "ParImpar.cpp"
 
 using namespace std;
 
@@ -28,19 +33,24 @@ int main() {
     int opcion;
     
     do {
-        // Mostrar el menú principal 
+        // Mostrar el menï¿½ principal 
         cout << "==================== MENU GENERAL ====================" << endl;
         cout << "Seleccione una opcion para ejecutar el programa:" << endl;
         cout << "------------------------------------------------------" << endl;
         cout << "1. Suma, Resta, Multiplicacion y Division de dos numeros" << endl;
+        cout << "2. Validar si un Numero es Par o Impar" << endl;
         cout << "4. Palindromo" << endl;
         cout << "5. Conversion de numeros arabigos a romanos" << endl;
+        cout << "6. Convertir numeros Enteros a Letras" << endl;
         cout << "8. Ingrese la tabla de multiplicar que desee" << endl;
         cout << "9. Tablas de multiplicar" << endl;
+        cout << "10. Generar una multiplicacion Grafica" << endl;
         cout << "12. Convertir numero Decimal a Hexadecimal" << endl;
         cout << "13. Crear figuras geometricas basicas y Contar palabras en una frase" << endl;
+        cout << "14. Mover un punto en toda la pantalla" << endl;
         cout << "16. Calcular la Hipotenusa" << endl;
         cout << "17. Contar palabras en una frase" << endl;
+        cout << "18. Generar Password con Palabras claves" << endl;
         cout << "20. Numero Central de tres digitos" << endl;
         cout << "0. Salir" << endl;
         cout << "------------------------------------------------------" << endl;
@@ -54,6 +64,10 @@ int main() {
                 operacionesMatematicas();
                 limpiarPantallaYMostrarMenu(); 
                 break;
+            case 2:
+            ParImpar();
+            limpiarPantallaYMostrarMenu(); 
+                break;
    			 case 4:
                 verificarPalindromo();
                 limpiarPantallaYMostrarMenu(); 
@@ -62,13 +76,21 @@ int main() {
                 arabigoRomano();
                 limpiarPantallaYMostrarMenu(); 
                 break;
+            case 6:
+            EnterosaLetras();
+            limpiarPantallaYMostrarMenu(); 
+                break;
             case 8:
                 tablaMultiplicar();
                 limpiarPantallaYMostrarMenu(); 
                 break;
             case 9:
                 imprimirTablas();
-                limpiarPantallaYMostrarMenu(); 
+                limpiarPantallaYMostrarMenu();
+                break;
+            case 10:
+            MultiGrafica();
+            limpiarPantallaYMostrarMenu();
                 break;
             case 12:
                 convertirDecimalAHexadecimal();
@@ -76,7 +98,11 @@ int main() {
                 break;
             case 13:
                 figurasGeometricas();
-                limpiarPantallaYMostrarMenu(); 
+                limpiarPantallaYMostrarMenu();
+                break;
+            case 14:
+            MoverPunto();
+            limpiarPantallaYMostrarMenu();
                 break;
             case 16:
                 calcularHipotenusa();
@@ -85,6 +111,10 @@ int main() {
             case 17:
                 ejecutarContarPalabras();
                 limpiarPantallaYMostrarMenu(); 
+                break;
+            case 18:
+            GenerarPassword();
+                limpiarPantallaYMostrarMenu();
                 break;
             case 20:
                 encontrarNumeroCentral();
