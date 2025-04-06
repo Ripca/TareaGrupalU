@@ -1,23 +1,19 @@
 #include <iostream>
 #include <string>
-#include <sstream>
 #include <cmath>
 
 using namespace std;
 
-// Arreglos de palabras para unidades, decenas, centenas y números especiales
-string unidades[] = {"", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
-string especiales[] = {"diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve"};
-string decenas[] = {"", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"};
-string centenas[] = {"", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos",
-                     "seiscientos", "setecientos", "ochocientos", "novecientos"};
-
-// Convierte números menores a 1000 a letras
 string convertirMenorMil(int numero) {
+    string unidades[10] = {"", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
+    string especiales[10] = {"diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete", "dieciocho", "diecinueve"};
+    string decenas[10] = {"", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"};
+    string centenas[10] = {"", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos",
+                           "seiscientos", "setecientos", "ochocientos", "novecientos"};
+
     string resultado = "";
 
     if (numero == 0) return "";
-
     if (numero == 100) return "cien";
 
     int cent = numero / 100;
@@ -36,8 +32,8 @@ string convertirMenorMil(int numero) {
         if (dec > 0) {
             resultado += decenas[dec];
             if (uni > 0) {
-                if (dec == 2) resultado += "i" + unidades[uni]; // veintiuno, veintidos
-                else resultado += " y " + unidades[uni];       // treinta y uno, etc.
+                if (dec == 2) resultado += "i" + unidades[uni]; // veintiuno, veintidos...
+                else resultado += " y " + unidades[uni];       // treinta y uno...
             }
         } else {
             resultado += unidades[uni];
@@ -47,30 +43,25 @@ string convertirMenorMil(int numero) {
     return resultado;
 }
 
-// Convierte cualquier numero entero hasta los millones a letras
 string convertirNumero(int numero) {
     if (numero == 0) return "cero";
 
     string resultado = "";
 
-    // Extraemos millones, miles y unidades
     int millones = numero / 1000000;
     int miles = (numero % 1000000) / 1000;
     int resto = numero % 1000;
 
-    // Parte de millones
     if (millones > 0) {
         if (millones == 1) resultado += "un millon ";
         else resultado += convertirMenorMil(millones) + " millones ";
     }
 
-    // Parte de miles
     if (miles > 0) {
         if (miles == 1) resultado += "mil ";
         else resultado += convertirMenorMil(miles) + " mil ";
     }
 
-    // Parte de unidades
     if (resto > 0) {
         resultado += convertirMenorMil(resto);
     }
@@ -78,35 +69,31 @@ string convertirNumero(int numero) {
     return resultado;
 }
 
-// Convierte el numero completo con parte decimal a letras
-string numeroALetras(double numero) {
-    int entero = (int)numero;                    // Parte entera
-    int decimal = round((numero - entero) * 100); // Parte decimal
+void convertirNumeroALetras() {
+    double numero;
+    cout << "Ingrese un numero entero con decimales: ";
+    cin >> numero;
 
-    string resultado = convertirNumero(entero);  // Convertir parte entera
+    int entero = (int)numero;
+    int decimal = int((numero - entero) * 100 + 0.5); // Redondeo manual
 
-    // Agregamos la parte decimal
+    string resultado = convertirNumero(entero);
     resultado += " con ";
+
     if (decimal == 0) {
         resultado += "cero centimos";
     } else {
         resultado += convertirMenorMil(decimal) + " centimos";
     }
 
-    return resultado;
+    cout << "En letras: " << resultado << endl;
 }
 
-// Funcion principal
-int main() {
-    double numero;
 
-    cout << "Ingrese un numero entero con decimales: ";
-    cin >> numero;
 
-    // Mostramos el resultado en letras
-    string letras = numeroALetras(numero);
-    cout << "En letras: " << letras << endl;
 
-    return 0;
-}
+
+
+
+
 

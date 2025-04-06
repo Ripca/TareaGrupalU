@@ -10,10 +10,11 @@
 #include "FigurasGeometricas.cpp"
 #include "ContadorPalabras.cpp"
 #include "Palindromo.cpp"
-#include "Tabla_multiplicar.cpp"
-#include "Decimal_hexadecimal.cpp"
-#include "Hipotenusa.cpp"
-#include "Numero_central.cpp"
+#include "ConvertidorDistanciasPesos.cpp"
+#include "NumerosEnterosConDecimalesALetras.cpp"
+#include "ConversorDecimalABinario.cpp"
+#include "CajeroAutomata.cpp"
+#include "Restaurante.cpp"
 
 using namespace std;
 
@@ -33,15 +34,16 @@ int main() {
         cout << "Seleccione una opcion para ejecutar el programa:" << endl;
         cout << "------------------------------------------------------" << endl;
         cout << "1. Suma, Resta, Multiplicacion y Division de dos numeros" << endl;
-        cout << "4. Palindromo" << endl;
+        cout << "2. Palindromo" << endl;
+        cout << "3. Convertidor de kilometros a millas, metros a pulgadas, de libras a pulgadas y viceversa" << endl;
         cout << "5. Conversion de numeros arabigos a romanos" << endl;
-        cout << "8. Ingrese la tabla de multiplicar que desee" << endl;
+        cout << "7. conversion de numeros enteros con decimal a letras" <<endl;
         cout << "9. Tablas de multiplicar" << endl;
-        cout << "12. Convertir numero Decimal a Hexadecimal" << endl;
+        cout << "11. Conversion de numeros decimales a binario" << endl;
         cout << "13. Crear figuras geometricas basicas y Contar palabras en una frase" << endl;
-        cout << "16. Calcular la Hipotenusa" << endl;
+        cout << "15. Simulacion de cajero Automata"<< endl;
         cout << "17. Contar palabras en una frase" << endl;
-        cout << "20. Numero Central de tres digitos" << endl;
+        cout << "19 Programa de Restaurante"<<endl;
         cout << "0. Salir" << endl;
         cout << "------------------------------------------------------" << endl;
         
@@ -54,40 +56,44 @@ int main() {
                 operacionesMatematicas();
                 limpiarPantallaYMostrarMenu(); 
                 break;
-   			 case 4:
+   			 case 2:
                 verificarPalindromo();
                 limpiarPantallaYMostrarMenu(); 
+                break;
+             case 3:
+            	menuConversor();
+            	limpiarPantallaYMostrarMenu(); 
                 break;
             case 5:
                 arabigoRomano();
                 limpiarPantallaYMostrarMenu(); 
                 break;
-            case 8:
-                tablaMultiplicar();
-                limpiarPantallaYMostrarMenu(); 
+            case 7:
+            	convertirNumeroALetras();
+            	limpiarPantallaYMostrarMenu(); 
                 break;
             case 9:
                 imprimirTablas();
                 limpiarPantallaYMostrarMenu(); 
                 break;
-            case 12:
-                convertirDecimalAHexadecimal();
+             case 11:
+                convertirDecimalABinario();
                 limpiarPantallaYMostrarMenu(); 
                 break;
             case 13:
                 figurasGeometricas();
                 limpiarPantallaYMostrarMenu(); 
                 break;
-            case 16:
-                calcularHipotenusa();
-                limpiarPantallaYMostrarMenu(); 
+            case 15:
+            	ejecutarCajero();
+            	limpiarPantallaYMostrarMenu(); 
                 break;
             case 17:
                 ejecutarContarPalabras();
                 limpiarPantallaYMostrarMenu(); 
                 break;
-            case 20:
-                encontrarNumeroCentral();
+            case 19:
+                realizarPedido();
                 limpiarPantallaYMostrarMenu(); 
                 break;
             case 0:

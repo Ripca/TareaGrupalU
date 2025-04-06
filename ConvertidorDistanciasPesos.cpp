@@ -1,32 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Aqui utilizamos las funciones para la conversión
-double kilometrosAMillas(double km) {
-    return km * 0.621371;
-}
-
-double millasAKilometros(double mi) {
-    return mi / 0.621371;
-}
-
-double metrosAPulgadas(double mts) {
-    return mts * 39.3701;
-}
-
-double pulgadasAMetros(double in) {
-    return in / 39.3701;
-}
-
-double librasAKilos(double lbs) {
-    return lbs * 0.453592;
-}
-
-double kilosALibras(double kg) {
-    return kg / 0.453592;
-}
-
-int main() {
+void menuConversor() {
     int opcion;
     double valor;
 
@@ -46,32 +21,32 @@ int main() {
             case 1:
                 cout << "Ingrese los kilómetros que desea convertir : ";
                 cin >> valor;
-                cout << "Equivale a " << kilometrosAMillas(valor) << " millas." << endl;
+                cout << "Equivale a " << (valor * 0.621371) << " millas." << endl;
                 break;
             case 2:
                 cout << "Ingrese las millas que desea convertir: ";
                 cin >> valor;
-                cout << "Equivale a " << millasAKilometros(valor) << " kilómetros." << endl;
+                cout << "Equivale a " << (valor / 0.621371) << " kilómetros." << endl;
                 break;
             case 3:
                 cout << "Ingrese los metros que desea convertir: ";
                 cin >> valor;
-                cout << "Equivale a " << metrosAPulgadas(valor) << " pulgadas." << endl;
+                cout << "Equivale a " << (valor * 39.3701) << " pulgadas." << endl;
                 break;
             case 4:
                 cout << "Ingrese las pulgadas que desea convertir: ";
                 cin >> valor;
-                cout << "Equivale a " << pulgadasAMetros(valor) << " metros." << endl;
+                cout << "Equivale a " << (valor / 39.3701) << " metros." << endl;
                 break;
             case 5:
                 cout << "Ingrese las libras que desea convertir: ";
                 cin >> valor;
-                cout << "Equivale a " << librasAKilos(valor) << " kilogramos." << endl;
+                cout << "Equivale a " << (valor * 0.453592) << " kilogramos." << endl;
                 break;
             case 6:
                 cout << "Ingrese los kilogramos que desea convertir: ";
                 cin >> valor;
-                cout << "Equivale a " << kilosALibras(valor) << " libras." << endl;
+                cout << "Equivale a " << (valor / 0.453592) << " libras." << endl;
                 break;
             case 0:
                 cout << "Saliendo del programa..." << endl;
@@ -79,8 +54,10 @@ int main() {
             default:
                 cout << "Opción no válida. Intente nuevamente." << endl;
         }
-    } while (opcion != 0);
+        cout << endl;
 
-    return 0;
+    } while (opcion != 0);
 }
+
+
 
