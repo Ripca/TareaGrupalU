@@ -20,14 +20,18 @@
 #include "MoverPunto.cpp"
 #include "MultiGrafica.cpp"
 #include "ParImpar.cpp"
+#include "Hipotenusa.cpp"
+#include "Decimal_hexadecimal.cpp"
+#include "Tabla_multiplicar.cpp"
+#include "Numero_central.cpp"
 
 using namespace std;
 
 void limpiarPantallaYMostrarMenu() {
-    cin.ignore();  // Limpiar el buffer
+    cin.ignore();  
     cout << "Presiona Enter para continuar...";
-    cin.get();     // Esperar a que el usuario presione Enter
-    system("cls"); // Limpiar la pantalla (en Windows)
+    cin.get();     
+    system("cls"); 
 }
 
 int main() {
@@ -44,8 +48,8 @@ int main() {
         cout << "4. Verificar si una palabra o frase es Palindromo" << endl;
         cout << "5. Conversion de numeros arabigos a romanos" << endl;
         cout << "6. Convertir numeros enteros a letras" << endl;
-        cout << "7. Conversion de numeros decimales (con punto) a letras" << endl;
-        cout << "8. Ingresar una tabla de multiplicar específica" << endl;
+        cout << "7. Conversion de numeros decimales a letras" << endl;
+        cout << "8. Ingresar una tabla de multiplicar especifica" << endl;
         cout << "9. Mostrar tablas de multiplicar del 1 al 10" << endl;
         cout << "10. Generar una multiplicacion grafica" << endl;
         cout << "11. Conversion de numeros decimales a binario" << endl;
@@ -53,7 +57,7 @@ int main() {
         cout << "13. Crear figuras geometricas basicas y contar palabras en una frase" << endl;
         cout << "14. Mover un punto en toda la pantalla" << endl;
         cout << "15. Simulacion de cajero automatico" << endl;
-        cout << "16. Calcular la hipotenusa de un triángulo rectángulo" << endl;
+        cout << "16. Calcular la hipotenusa de un triangulo rectangulo" << endl;
         cout << "17. Contar palabras en una frase" << endl;
         cout << "18. Generar password con palabras clave" << endl;
         cout << "19. Programa de Restaurante (menu y ordenes)" << endl;

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void ParImpar() {
+void verificarParImpar() {
     int numero;
 
     cout << "VALIDADOR DE NUMEROS PARES O IMPARES" << endl;
@@ -16,3 +16,5 @@ void ParImpar() {
         cout << "El numero " << numero << " es impar." << endl;
     }
 }
+
+

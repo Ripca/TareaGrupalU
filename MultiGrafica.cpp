@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <iomanip>
+#include <string> // necesario para usar string en C++98
 
 using namespace std;
 
@@ -13,25 +14,31 @@ void mostrar_multiplicacion_manual(int num1, int num2) {
         digitos_num2.push_back(temp % 10);
         temp /= 10;
     }
+
     reverse(digitos_num2.begin(), digitos_num2.end());
 
     vector<int> productos_parciales;
-    for (int i = digitos_num2.size() - 1, multiplicador = 1; i >= 0; i--, multiplicador *= 10) {
+    int i;
+    int multiplicador = 1;
+    for (i = digitos_num2.size() - 1; i >= 0; --i) {
         productos_parciales.push_back(num1 * digitos_num2[i] * multiplicador);
+        multiplicador *= 10;
     }
 
     int resultado = 0;
-    for (int pp : productos_parciales) {
-        resultado += pp;
+    for (i = 0; i < productos_parciales.size(); ++i) {
+        resultado += productos_parciales[i];
     }
 
+    // Mostrar la multiplicación paso a paso
     cout << "\n  " << setw(10) << num1 << endl;
     cout << "x " << setw(9) << num2 << endl;
     cout << "-----------" << endl;
 
-    for (int i = 0; i < digitos_num2.size(); i++) {
+    for (i = 0; i < digitos_num2.size(); ++i) {
         int espacios = digitos_num2.size() - 1 - i;
-        cout << string(espacios + 2, ' ') << num1 * digitos_num2[i] << endl;
+        cout << string(espacios + 2, ' ');
+        cout << num1 * digitos_num2[i] << endl;
     }
 
     cout << "-----------" << endl;
@@ -49,3 +56,4 @@ void MultiGrafica() {
 
     mostrar_multiplicacion_manual(num1, num2);
 }
+
